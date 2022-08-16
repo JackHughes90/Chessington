@@ -1,4 +1,7 @@
 import Piece from './piece';
+import Square from '../square';
+import Player from '../player';
+
 
 export default class Rook extends Piece {
     constructor(player) {
