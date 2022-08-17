@@ -53,3 +53,4 @@ export default class Pawn extends Piece {
 
 // && board.getPiece(Square.at(location.row - 1, location.col - 1)) != board.findPiece(King.Player.WHITE)
 // && board.getPiece(Square.at(location.row - 1, location.col - 1)) != board.findPiece(King.Player.WHITE)
+// Hello world
