@@ -1,0 +1,18 @@
+- there are some words that mean different things
+- there are also some things that are called two or more things
+
+unit testing - just testing one small section / function
+
+arrange - Set up a scenario + Build any classes etc that we need
+act - Call the method we want to test
+assert - Check the result is what we wanted.
+
+Test Driven Development (TDD) - 
+
+git checkout -b "example-branch"
+-b means new branch
+
+diffs - changes from previous version
+
+git stash - stores changes
+git stash pop - brings back changes once you are back

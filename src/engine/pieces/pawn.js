@@ -21,12 +21,21 @@ export default class Pawn extends Piece {
                 moves.push(Square.at(location.row + 1, location.col))
             }
             if (board.getPiece(Square.at(location.row + 1, location.col - 1))
-                && board.getPiece(Square.at(location.row + 1, location.col - 1)).player === Player.BLACK) {    
-                moves.push(Square.at(location.row + 1, location.col - 1));
+                && board.getPiece(Square.at(location.row + 1, location.col - 1)).player === Player.BLACK) {
+                    if (board.getPiece(Square.at(location.row + 1, location.col - 1)) instanceof King) {
+                        moves = moves;
+                    } else {
+                        moves.push(Square.at(location.row + 1, location.col - 1));
+                    }    
+                
             }
             if (board.getPiece(Square.at(location.row + 1, location.col + 1))
                 && board.getPiece(Square.at(location.row + 1, location.col + 1)).player === Player.BLACK) {
-                moves.push(Square.at(location.row + 1, location.col + 1));
+                    if (board.getPiece(Square.at(location.row + 1, location.col + 1)) instanceof King) {
+                        moves = moves;
+                    } else {
+                        moves.push(Square.at(location.row + 1, location.col + 1));
+                    } 
             }
         }
         if (this.player === Player.BLACK && location.row != 0) { 
@@ -40,17 +49,25 @@ export default class Pawn extends Piece {
             }
             if (board.getPiece(Square.at(location.row - 1, location.col - 1))
                 && board.getPiece(Square.at(location.row - 1, location.col - 1)).player === Player.WHITE) {
-                moves.push(Square.at(location.row - 1, location.col - 1));
+
+                    if (board.getPiece(Square.at(location.row - 1, location.col - 1)) instanceof King) {
+                        moves = moves;
+                    } else {
+                        moves.push(Square.at(location.row - 1, location.col - 1));
+                    }
+                
             }
             if (board.getPiece(Square.at(location.row - 1, location.col + 1))
-                && board.getPiece(Square.at(location.row - 1, location.col - 1)).player === Player.WHITE) {
-                moves.push(Square.at(location.row - 1, location.col + 1));
+                && board.getPiece(Square.at(location.row - 1, location.col + 1)).player === Player.WHITE) {
+
+                if (board.getPiece(Square.at(location.row - 1, location.col + 1)) instanceof King) {
+                    moves = moves;
+                } else {
+                    moves.push(Square.at(location.row - 1, location.col + 1));
+                }
+                
             }
         }
         return moves
     }
 }
-
-// && board.getPiece(Square.at(location.row - 1, location.col - 1)) != board.findPiece(King.Player.WHITE)
-// && board.getPiece(Square.at(location.row - 1, location.col - 1)) != board.findPiece(King.Player.WHITE)
-// Hello world
