@@ -14,7 +14,7 @@ export default class Rook extends Piece {
     checkOpposingPiece(board,square){
         return (this.player===board.getPiece(square).player);
     }
-//comment
+
     isKing (board, square) {
         return board.getPiece(square) instanceof King;
     }
