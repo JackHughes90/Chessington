@@ -12,7 +12,7 @@ export default class Pawn extends Piece {
         return board.getPiece(square) instanceof King;
     }
 
-
+// comment
 
     getAvailableMoves(board) {
         let location = board.findPiece(this);
